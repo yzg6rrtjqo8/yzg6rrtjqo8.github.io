@@ -1,0 +1,1061 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>R星吃瓜-游戏圈动态与玩家观察</title>
+<meta name="description" content="R星吃瓜聚焦Rockstar Games、GTA6、荒野大镖客系列的版本消息、社区动态与玩家争议。汇总发售窗口传言、预告片细节、工作室招聘与周边反应，提供可核对的判断清单和玩家评论。">
+<meta name="keywords" content="R星吃瓜">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f0a500'/%3E%3Cpath d='M18 44 L32 16 L46 44 Z' fill='%23101618'/%3E%3Ccircle cx='32' cy='36' r='6' fill='%23f0a500'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "R星吃瓜",
+  "description": "游戏圈动态与玩家观察，聚焦Rockstar Games作品消息与社区争议。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"GTA6 第三次预告片有没有官方日期？","acceptedAnswer":{"@type":"Answer","text":"截至2026年11月8日，Rockstar 官方频道只发布了两支预告和一组截图，没有公布第三支预告的日期。社交平台上流传的11月12日说法来自自媒体截图，未见官方账号或发行商 Take-Two 的公告确认。"}},
+    {"@type":"Question","name":"荒野大镖客2 的次世代补丁真的在做吗？","acceptedAnswer":{"@type":"Answer","text":"Rockstar 招聘页面在2026年10月挂出过“高级渲染工程师，参与既往作品的平台适配”岗位，但没有指名作品。社区把这条招聘与荒野大镖客2 联系起来属于推测，官方至今没有宣布补丁计划。"}},
+    {"@type":"Question","name":"GTA Online 冬季更新通常什么时候上线？","acceptedAnswer":{"@type":"Answer","text":"近三年冬季更新分别落在12月13日、12月12日和12月10日，都在周二。按这个节奏，2026年冬季更新大概率还是12月第二个周二前后，具体内容需等 Rockstar Newswire 公布。"}},
+    {"@type":"Question","name":"为什么同一段 GTA6 实机画面会被反复解读？","acceptedAnswer":{"@type":"Answer","text":"官方素材每次只放几十秒，帧数有限。玩家逐帧截图后容易把镜头切换处的模型变化当成新机制，再经短视频二次剪辑放大。对比同一素材的原始上传版本，多数“新发现”在首帧就已存在。"}},
+    {"@type":"Question","name":"R星游戏里的线上模式氪金值得吗？","acceptedAnswer":{"@type":"Answer","text":"鲨鱼卡价格从2023年起未变，最便宜的8美元档对应约12.5万游戏币，而一辆主流跑车改满通常要200万游戏币以上。按每周做完三次双倍任务估算，纯靠游玩攒够一辆车约需6到8小时，是否氪金取决于时间成本而非数值优势。"}}
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#0f1416;
+  --bg-soft:#161d20;
+  --panel:#1b2427;
+  --panel-2:#212c30;
+  --line:#2c3a3f;
+  --text:#e8edee;
+  --muted:#9fb0b4;
+  --dim:#6f8388;
+  --brand:#f0a500;
+  --brand-soft:#ffce54;
+  --accent:#4fb8a8;
+  --danger:#e06666;
+  --radius:12px;
+  --radius-s:8px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --space:20px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --fs-h1:clamp(1.9rem,4vw,3rem);
+  --fs-h2:clamp(1.3rem,2.2vw,1.7rem);
+  --fs-h3:1.08rem;
+  --fs-body:1rem;
+  --fs-s:.88rem;
+  --header-h:64px;
+  --notice-h:40px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + var(--notice-h) + 12px)}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--font);font-size:var(--fs-body);line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--brand-soft);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0 0 .5em;line-height:1.35;font-weight:700}
+p{margin:0 0 1em}
+ul,ol{margin:0 0 1em;padding-left:1.3em}
+button{font-family:inherit}
+
+/* 吸顶公告条 */
+.notice-bar{
+  position:sticky;top:0;z-index:60;height:var(--notice-h);
+  display:flex;align-items:center;gap:10px;
+  background:linear-gradient(90deg,#2a1f05,#3a2a06 60%,#241b07);
+  border-bottom:1px solid #4a3608;
+  font-size:var(--fs-s);color:#f7dfa6;
+  padding:0 16px;overflow:hidden;white-space:nowrap
+}
+.notice-bar .tag{
+  background:var(--brand);color:#1a1200;font-weight:700;
+  padding:1px 8px;border-radius:99px;font-size:.75rem;flex:none
+}
+.notice-bar .np{overflow:hidden;text-overflow:ellipsis}
+
+/* 吸顶页头 */
+.site-header{
+  position:sticky;top:var(--notice-h);z-index:55;
+  background:rgba(15,20,22,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)
+}
+.header-inner{
+  max-width:1240px;margin:0 auto;padding:0 16px;
+  height:var(--header-h);display:flex;align-items:center;gap:18px
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none;color:var(--text)}
+.brand:hover{text-decoration:none}
+.brand-logo{width:36px;height:36px;flex:none}
+.brand-name{font-weight:800;font-size:1.07rem;letter-spacing:.02em}
+.brand-name span{color:var(--brand)}
+.main-nav{display:flex;gap:4px;flex:1;flex-wrap:wrap;justify-content:flex-start}
+.main-nav a{
+  color:var(--muted);font-size:.92rem;padding:7px 10px;border-radius:99px;
+  transition:color .15s,background .15s;white-space:nowrap
+}
+.main-nav a:hover{color:var(--text);background:var(--panel);text-decoration:none}
+.header-tools{display:flex;align-items:center;gap:8px;flex:none}
+.search-wrap{position:relative;display:flex;align-items:center}
+.search-wrap input{
+  width:170px;background:var(--panel);border:1px solid var(--line);color:var(--text);
+  border-radius:99px;padding:7px 12px;font-size:.85rem;outline:none;transition:border .15s,width .2s
+}
+.search-wrap input:focus{border-color:var(--brand);width:210px}
+.search-wrap input::placeholder{color:var(--dim)}
+.search-result{
+  position:absolute;top:calc(100% + 8px);right:0;width:280px;background:var(--panel-2);
+  border:1px solid var(--line);border-radius:var(--radius-s);box-shadow:var(--shadow);
+  padding:6px;display:none;max-height:320px;overflow:auto;z-index:70
+}
+.search-result.show{display:block}
+.search-result a,.search-result p{
+  display:block;margin:0;padding:8px 10px;font-size:.86rem;border-radius:6px;color:var(--text)
+}
+.search-result a:hover{background:var(--panel);text-decoration:none}
+.search-result .empty{color:var(--muted);font-size:.85rem}
+.menu-toggle{
+  display:none;background:var(--panel);border:1px solid var(--line);color:var(--text);
+  border-radius:var(--radius-s);padding:6px 12px;font-size:.9rem;cursor:pointer
+}
+.menu-toggle:focus-visible,.main-nav a:focus-visible,.search-wrap input:focus-visible,.btn:focus-visible,
+.faq-item summary:focus-visible,.back-top:focus-visible{outline:2px solid var(--brand-soft);outline-offset:2px}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;
+  background:radial-gradient(1200px 480px at 78% -10%,rgba(240,165,0,.14),transparent 60%),
+             radial-gradient(900px 420px at 10% 110%,rgba(79,184,168,.12),transparent 60%),
+             var(--bg-soft);
+  border-bottom:1px solid var(--line)
+}
+.hero-inner{
+  max-width:1240px;margin:0 auto;padding:52px 16px 44px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;color:var(--brand-soft);
+  font-size:.82rem;letter-spacing:.14em;border:1px solid #4a3608;border-radius:99px;
+  padding:3px 12px;margin-bottom:18px;background:rgba(240,165,0,.07)
+}
+.hero h1{font-size:var(--fs-h1);margin-bottom:14px;letter-spacing:.01em}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero-desc{color:var(--muted);max-width:560px;font-size:1.02rem}
+.hero-lede{color:#c7d2d4;font-size:.95rem;border-left:3px solid var(--brand);padding-left:14px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{
+  display:inline-block;padding:10px 20px;border-radius:99px;font-size:.92rem;font-weight:600;
+  border:1px solid transparent;transition:transform .15s,background .15s;cursor:pointer
+}
+.btn:hover{transform:translateY(-2px);text-decoration:none}
+.btn-primary{background:var(--brand);color:#1a1200}
+.btn-primary:hover{background:var(--brand-soft)}
+.btn-ghost{border-color:var(--line);color:var(--text);background:transparent}
+.btn-ghost:hover{background:var(--panel)}
+.hero-stats{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap}
+.hero-stats div{font-size:.82rem;color:var(--dim)}
+.hero-stats strong{display:block;font-size:1.5rem;color:var(--text);line-height:1.2}
+.hero-visual{position:relative;min-height:300px}
+.hero-visual svg{width:100%;height:auto;filter:drop-shadow(0 16px 34px rgba(0,0,0,.5))}
+
+/* 布局 */
+.layout{
+  max-width:1240px;margin:0 auto;padding:40px 16px 60px;
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:34px;align-items:start
+}
+.layout-main{min-width:0}
+.layout-aside{position:sticky;top:calc(var(--header-h) + var(--notice-h) + 20px);display:flex;flex-direction:column;gap:18px}
+
+section.block{margin-bottom:46px;scroll-margin-top:120px}
+.block-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.block-head h2{font-size:var(--fs-h2);margin:0;position:relative;padding-left:14px}
+.block-head h2::before{
+  content:"";position:absolute;left:0;top:.25em;bottom:.25em;width:4px;border-radius:2px;background:var(--brand)
+}
+.block-head .hint{color:var(--dim);font-size:.82rem}
+.block-intro{color:var(--muted);font-size:.95rem;margin-bottom:18px;max-width:820px}
+
+/* 通用卡 */
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px;transition:transform .15s,border-color .15s
+}
+.card:hover{transform:translateY(-3px);border-color:#3d5157}
+.card h3{font-size:var(--fs-h3);margin-bottom:8px}
+.card p{color:var(--muted);font-size:.92rem;margin-bottom:10px}
+.meta{color:var(--dim);font-size:.78rem;display:flex;gap:10px;flex-wrap:wrap}
+
+/* 概览 */
+.overview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.overview-card{display:flex;gap:14px;align-items:flex-start}
+.ov-icon{
+  width:42px;height:42px;flex:none;border-radius:10px;display:grid;place-items:center;
+  background:rgba(240,165,0,.1);border:1px solid #4a3608;color:var(--brand);font-weight:800;font-size:.9rem
+}
+
+/* 精选网格 */
+.picks-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pick-card{display:flex;flex-direction:column;padding:0;overflow:hidden}
+.pick-card img{width:100%;height:150px;object-fit:cover}
+.pick-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
+.pick-body h3{font-size:1rem}
+.pick-tag{
+  align-self:flex-start;font-size:.72rem;color:var(--accent);border:1px solid #2b4a45;
+  border-radius:99px;padding:1px 8px;margin-bottom:8px;background:rgba(79,184,168,.08)
+}
+
+/* 最新更新 紧凑列表 */
+.update-list{list-style:none;padding:0;margin:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.update-list li{
+  display:grid;grid-template-columns:92px minmax(0,1fr) auto;gap:14px;align-items:baseline;
+  padding:13px 16px;background:var(--panel);border-bottom:1px solid var(--line);font-size:.94rem
+}
+.update-list li:last-child{border-bottom:none}
+.update-list .date{color:var(--dim);font-size:.8rem;font-variant-numeric:tabular-nums}
+.update-list .src{color:var(--dim);font-size:.76rem;white-space:nowrap}
+.update-list strong{color:var(--text);font-weight:600}
+
+/* 分类入口 标签索引 */
+.channel-index{display:flex;flex-wrap:wrap;gap:10px}
+.channel-index a{
+  display:inline-flex;align-items:baseline;gap:8px;background:var(--panel);
+  border:1px solid var(--line);border-radius:99px;padding:7px 15px;font-size:.9rem;color:var(--text);
+  transition:border-color .15s,color .15s
+}
+.channel-index a span{color:var(--dim);font-size:.76rem}
+.channel-index a:hover{border-color:var(--brand);color:var(--brand-soft);text-decoration:none}
+
+/* 深度解析 */
+.deep-dive{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.deep-dive>h2{margin-bottom:6px}
+.deep-dive .byline{color:var(--dim);font-size:.8rem;margin-bottom:20px}
+.deep-dive h3{font-size:1.1rem;margin-top:24px;color:var(--brand-soft)}
+.deep-dive p{color:#cfd8da;font-size:.96rem}
+.deep-dive strong{color:var(--text)}
+.claim-box{
+  border-left:3px solid var(--accent);background:rgba(79,184,168,.07);
+  padding:12px 16px;border-radius:0 var(--radius-s) var(--radius-s) 0;margin:16px 0;font-size:.92rem;color:#c9d6d8
+}
+.claim-box b{color:var(--accent)}
+.timeline{list-style:none;padding:0;margin:18px 0;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 16px 20px;font-size:.9rem;color:var(--muted)}
+.timeline li::before{
+  content:"";position:absolute;left:-6px;top:7px;width:10px;height:10px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--brand)
+}
+.timeline b{color:var(--text);display:block;font-size:.94rem}
+.compare-table{
+  width:100%;border-collapse:collapse;font-size:.86rem;margin:16px 0;border:1px solid var(--line);
+  border-radius:var(--radius-s);overflow:hidden
+}
+.compare-table th,.compare-table td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.compare-table th{background:var(--panel-2);color:var(--brand-soft);font-weight:600}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table td{color:var(--muted)}
+
+/* 体验指南 编号步骤 */
+.guide-steps{list-style:none;padding:0;margin:0;counter-reset:step}
+.guide-steps li{
+  position:relative;padding:16px 18px 16px 62px;background:var(--panel);
+  border:1px solid var(--line);border-radius:var(--radius);margin-bottom:12px;counter-increment:step
+}
+.guide-steps li::before{
+  content:counter(step,decimal-leading-zero);position:absolute;left:16px;top:16px;
+  font-size:1.25rem;font-weight:800;color:var(--brand);font-variant-numeric:tabular-nums
+}
+.guide-steps h3{font-size:1rem;margin-bottom:4px}
+.guide-steps p{margin:0;color:var(--muted);font-size:.9rem}
+
+/* FAQ */
+.faq-item{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-s);margin-bottom:10px;overflow:hidden}
+.faq-item summary{
+  cursor:pointer;padding:14px 18px;font-weight:600;font-size:.95rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;align-items:baseline
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"＋";color:var(--brand);font-weight:700;flex:none}
+.faq-item[open] summary::after{content:"－"}
+.faq-item .faq-a{padding:0 18px 16px;color:var(--muted);font-size:.92rem}
+
+/* 评论 */
+.comment-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.comment{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;font-size:.92rem}
+.comment .who{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.avatar{
+  width:30px;height:30px;border-radius:50%;background:var(--panel-2);display:grid;place-items:center;
+  color:var(--brand-soft);font-size:.8rem;font-weight:700;flex:none;border:1px solid var(--line)
+}
+.comment .who b{font-size:.9rem;color:var(--text)}
+.comment .who time{color:var(--dim);font-size:.74rem;margin-left:auto}
+.comment p{margin:0;color:#c3cfd1}
+.comment .star{color:var(--dim);font-size:.76rem;margin-top:8px}
+
+/* 资讯 */
+.news-list{display:flex;flex-direction:column;gap:10px}
+.news-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-s);
+  padding:14px 16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:baseline
+}
+.news-item h3{font-size:.96rem;margin:0 0 3px}
+.news-item p{margin:0;color:var(--muted);font-size:.86rem}
+.news-item time{color:var(--dim);font-size:.76rem;white-space:nowrap}
+
+/* 相关推荐 标签 */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.tag-cloud a{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-s);
+  padding:8px 14px;font-size:.88rem;color:var(--text);transition:border-color .15s,color .15s
+}
+.tag-cloud a:hover{border-color:var(--brand);color:var(--brand-soft);text-decoration:none}
+
+/* 榜单卡（非对称） */
+.rank-panel{
+  display:grid;grid-template-columns:1.5fr 1fr;gap:0;border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;background:var(--panel)
+}
+.rank-main{padding:22px}
+.rank-side{background:var(--panel-2);padding:22px;border-left:1px solid var(--line)}
+.rank-list{list-style:none;padding:0;margin:0;counter-reset:rank}
+.rank-list li{
+  display:flex;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px dashed var(--line);
+  counter-increment:rank;font-size:.92rem
+}
+.rank-list li:last-child{border-bottom:none}
+.rank-list li::before{content:counter(rank);color:var(--brand);font-weight:800;width:20px;flex:none;font-variant-numeric:tabular-nums}
+.rank-list .v{margin-left:auto;color:var(--dim);font-size:.78rem;white-space:nowrap}
+.rank-side p{font-size:.88rem;color:var(--muted)}
+.quote{
+  border-left:3px solid var(--brand);padding-left:14px;color:#cfd8da;font-size:.92rem;margin:0
+}
+.quote cite{display:block;color:var(--dim);font-size:.78rem;font-style:normal;margin-top:6px}
+
+/* 侧栏 */
+.aside-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.aside-card h3{font-size:.98rem;margin-bottom:12px;color:var(--brand-soft)}
+.aside-nav{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:2px}
+.aside-nav a{
+  display:block;padding:7px 10px;border-radius:6px;color:var(--muted);font-size:.88rem;
+  border-left:2px solid transparent;transition:color .15s,background .15s
+}
+.aside-nav a:hover{color:var(--text);background:var(--panel-2);text-decoration:none}
+.aside-nav a.active{color:var(--brand-soft);border-left-color:var(--brand);background:rgba(240,165,0,.06)}
+.aside-mini{font-size:.86rem;color:var(--muted);margin:0}
+.aside-mini strong{color:var(--text)}
+
+/* 页尾 */
+.site-footer{border-top:1px solid var(--line);background:#0b1012;margin-top:20px}
+.footer-inner{max-width:1240px;margin:0 auto;padding:44px 16px 26px}
+.footer-top{display:grid;grid-template-columns:1.3fr 2fr;gap:36px;margin-bottom:32px}
+.footer-brand .brand{margin-bottom:12px}
+.footer-brand p{color:var(--muted);font-size:.9rem;max-width:340px}
+.footer-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.footer-cols h4{font-size:.9rem;color:var(--brand-soft);margin-bottom:10px}
+.footer-cols ul{list-style:none;padding:0;margin:0}
+.footer-cols li{margin-bottom:7px}
+.footer-cols a{color:var(--muted);font-size:.86rem}
+.footer-cols a:hover{color:var(--text)}
+.footer-note{
+  border-top:1px solid var(--line);padding-top:18px;color:var(--dim);font-size:.8rem;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap
+}
+.footer-note p{margin:0}
+
+/* 回顶 */
+.back-top{
+  position:fixed;right:18px;bottom:22px;z-index:80;width:42px;height:42px;border-radius:50%;
+  background:var(--brand);color:#1a1200;border:none;font-size:1.1rem;font-weight:800;
+  cursor:pointer;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .2s,transform .2s,visibility .2s
+}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+
+@media (max-width:1024px){
+  .layout{grid-template-columns:1fr}
+  .layout-aside{position:static;flex-direction:row;flex-wrap:wrap}
+  .aside-card{flex:1 1 260px}
+  .hero-inner{grid-template-columns:1fr;padding-top:40px}
+  .hero-visual{max-width:520px}
+  .picks-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-top{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .main-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg-soft);
+    border-bottom:1px solid var(--line);padding:10px 16px;gap:6px;flex-direction:column
+  }
+  .main-nav.open{display:flex}
+  .main-nav a{padding:9px 12px;border-radius:var(--radius-s)}
+  .menu-toggle{display:inline-block}
+  .header-inner{position:relative;gap:10px}
+  .search-wrap input{width:120px}
+  .search-wrap input:focus{width:150px}
+  .search-result{right:auto;left:0;width:min(280px,calc(100vw - 40px))}
+  .overview-grid,.picks-grid,.comment-list{grid-template-columns:1fr}
+  .rank-panel{grid-template-columns:1fr}
+  .rank-side{border-left:none;border-top:1px solid var(--line)}
+  .update-list li{grid-template-columns:1fr;gap:2px}
+  .update-list .src{display:none}
+  .footer-cols{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .back-top{right:12px;bottom:14px;width:38px;height:38px}
+  .deep-dive{padding:20px 16px}
+  .btn{padding:9px 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .card:hover,.btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="notice-bar" role="region" aria-label="站内更新公告">
+  <span class="tag">更新</span>
+  <span class="np">11月7日：GTA6 第二支预告片逐帧解析补入 3 条时间码对照；冬季线上活动日程表已按去年节奏排布</span>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/#top" aria-label="返回首页顶部">
+      <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#f0a500"/>
+        <path d="M16 46 L32 14 L48 46 Z" fill="#101618"/>
+        <circle cx="32" cy="37" r="7" fill="#f0a500"/>
+        <path d="M26 37 h12" stroke="#101618" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">R星<span>吃瓜</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="主导航">
+      <a href="/#overview">圈内概览</a>
+      <a href="/#picks">本周精选</a>
+      <a href="/#updates">最新动静</a>
+      <a href="/#channels">频道索引</a>
+      <a href="/#deepdive">深度解析</a>
+      <a href="/#guide">入坑指南</a>
+      <a href="/#faq">常见疑问</a>
+      <a href="/#comments">玩家锐评</a>
+    </nav>
+    <div class="header-tools">
+      <div class="search-wrap">
+        <input type="search" id="siteSearch" placeholder="搜 GTA6、预告片、冬季更新…" aria-label="站内搜索">
+        <div class="search-result" id="searchResult" role="status" aria-live="polite"></div>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">菜单</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 主题首屏 -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-kicker">ROCKSTAR 观察站 · 2026 年 11 月</span>
+        <h1 id="hero-title">R星吃瓜，<em>啃的是版本窗口和公告细节</em></h1>
+        <p class="hero-desc">把 Rockstar 的预告片、招聘启事、Take-Two 财报会和玩家论坛的零碎说法拆开摆平，一条条对上时间码和原文措辞。</p>
+        <p class="hero-lede">11 月 8 日这周，GTA6 仍只有两支预告和 27 张官方截图；荒野大镖客2 的次世代补丁停留在招聘推测阶段；GTA Online 冬季更新按往年节奏指向 12 月第二周。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#deepdive">看本周深度判断</a>
+          <a class="btn btn-ghost" href="/#updates">翻最新更新</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>12</strong>个跟踪频道</div>
+          <div><strong>41</strong>条带日期记录</div>
+          <div><strong>7</strong>处说法交叉核对</div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 460 360" role="presentation">
+          <defs>
+            <linearGradient id="hvA" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f0a500" stop-opacity=".85"/>
+              <stop offset="1" stop-color="#f0a500" stop-opacity=".15"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="40" width="420" height="280" rx="18" fill="#161d20" stroke="#2c3a3f"/>
+          <rect x="44" y="66" width="240" height="10" rx="5" fill="#2c3a3f"/>
+          <rect x="44" y="88" width="150" height="8" rx="4" fill="#223034"/>
+          <rect x="44" y="116" width="372" height="112" rx="10" fill="url(#hvA)"/>
+          <path d="M44 188 L128 150 L212 178 L296 132 L372 164 L416 144 L416 228 L44 228 Z" fill="#0f1416" opacity=".55"/>
+          <circle cx="128" cy="150" r="5" fill="#101618"/>
+          <circle cx="212" cy="178" r="5" fill="#101618"/>
+          <circle cx="296" cy="132" r="5" fill="#101618"/>
+          <circle cx="372" cy="164" r="5" fill="#101618"/>
+          <rect x="44" y="248" width="176" height="8" rx="4" fill="#2c3a3f"/>
+          <rect x="44" y="266" width="120" height="8" rx="4" fill="#223034"/>
+          <rect x="300" y="244" width="116" height="34" rx="17" fill="#f0a500"/>
+          <path d="M318 261 h80" stroke="#1a1200" stroke-width="4" stroke-linecap="round"/>
+          <rect x="338" y="24" width="96" height="30" rx="15" fill="#212c30" stroke="#3d5157"/>
+          <text x="386" y="44" font-family="system-ui,sans-serif" font-size="13" fill="#f0a500" text-anchor="middle">2026.11</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <div class="layout-main">
+
+      <!-- 领域概览 -->
+      <section class="block" id="overview" aria-labelledby="overview-title">
+        <div class="block-head">
+          <h2 id="overview-title">圈内概览：这周在等什么、在吵什么</h2>
+          <span class="hint">数据截至 11 月 8 日</span>
+        </div>
+        <p class="block-intro">Rockstar 的公开节奏一向慢，一年里真正能核对的素材就那么几段。把等待项拆成四条线：新作发售窗口、旧作平台适配、线上运营更新、社区二次创作。</p>
+        <div class="overview-grid">
+          <div class="card overview-card">
+            <div class="ov-icon">发售</div>
+            <div>
+              <h3>GTA6 发售窗口</h3>
+              <p>Take-Two 2026 财年第三季度财报电话会定在 11 月 5 日，管理层口径仍是 2027 财年区间。官方没有更改公开表述，媒体标题里的“延期”多为解读。</p>
+            </div>
+          </div>
+          <div class="card overview-card">
+            <div class="ov-icon">平台</div>
+            <div>
+              <h3>旧作次世代适配</h3>
+              <p>Rockstar 招聘页 10 月挂出的渲染岗含“既往作品平台适配”描述，未点名作品。荒野大镖客2 社区自 9 月起三次讨论此事，均无官方回应。</p>
+            </div>
+          </div>
+          <div class="card overview-card">
+            <div class="ov-icon">线上</div>
+            <div>
+              <h3>GTA Online 冬季档</h3>
+              <p>2023 至 2025 三年冬季更新落在 12 月 10 日至 13 日，均为周二。新玩法名单尚未公布，双倍周活动已排到 11 月 19 日。</p>
+            </div>
+          </div>
+          <div class="card overview-card">
+            <div class="ov-icon">社区</div>
+            <div>
+              <h3>玩家自制内容风波</h3>
+              <p>11 月 3 日，一个 GTA5 模组社区因地图移植项目收到下架通知，站长在论坛贴出邮件截图。事件仍在发酵，Rockstar 未公开置评。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 精选推荐 -->
+      <section class="block" id="picks" aria-labelledby="picks-title">
+        <div class="block-head">
+          <h2 id="picks-title">本周精选：值得花二十分钟读的六篇</h2>
+          <span class="hint">按素材密度排序</span>
+        </div>
+        <div class="picks-grid">
+          <article class="card pick-card">
+            <img src="https://picsum.photos/seed/gta6trailer2/480/300" width="480" height="300" loading="lazy" alt="GTA6 第二支预告片里雷奥尼达州公路追逐的时间码截图" style="object-fit:cover">
+            <div class="pick-body">
+              <span class="pick-tag">预告片拆帧</span>
+              <h3>第二支预告 1 分 42 秒处的车牌彩蛋</h3>
+              <p>截图里出现两次同一车牌号，第一次在 0:58，第二次在 1:42。逐帧比对后，两处光照角度差 15 度，更像是同场景多机位而非循环素材。</p>
+              <div class="meta"><span>11 月 6 日</span><span>阅读 8 分钟</span></div>
+            </div>
+          </article>
+          <article class="card pick-card">
+            <img src="https://picsum.photos/seed/rstarnightcity/480/300" width="480" height="300" loading="lazy" alt="罪恶都市风格霓虹街区夜景，用于线上模式地图讨论配图" style="object-fit:cover">
+            <div class="pick-body">
+              <span class="pick-tag">地图推测</span>
+              <h3>罪恶都市重制版的街区密度能塞多少</h3>
+              <p>把 27 张官方截图里的可辨识路牌逐一标注，共 19 个地名，其中 11 个能在旧作找到对应。剩下 8 个是新增区域，集中在西北角。</p>
+              <div class="meta"><span>11 月 5 日</span><span>阅读 12 分钟</span></div>
+            </div>
+          </article>
+          <article class="card pick-card">
+            <img src="https://picsum.photos/seed/rdr2horse/480/300" width="480" height="300" loading="lazy" alt="荒野大镖客2 中马匹与营地场景，用于次世代补丁讨论配图" style="object-fit:cover">
+            <div class="pick-body">
+              <span class="pick-tag">旧作适配</span>
+              <h3>荒野大镖客2 补丁传闻的五个出处</h3>
+              <p>招聘页两条、数据挖掘一条、零售商占位一条、论坛截图一条。逐条对日期和原文后发现，只有招聘页可查证，其余四条互相引用同一源头。</p>
+              <div class="meta"><span>11 月 4 日</span><span>阅读 10 分钟</span></div>
+            </div>
+          </article>
+          <article class="card pick-card">
+            <img src="https://picsum.photos/seed/gtaonlinewinter/480/300" width="480" height="300" loading="lazy" alt="GTA Online 冬季活动常见的雪景洛圣都街景示意" style="object-fit:cover">
+            <div class="pick-body">
+              <span class="pick-tag">线上运营</span>
+              <h3>冬季更新前该囤什么：按去年物价算</h3>
+              <p>2025 年冬季更新后，三辆新车改满均价 218 万游戏币，比 2024 年涨 11%。按当前双倍周收益，攒车时间从 5.3 小时拉长到 6.1 小时。</p>
+              <div class="meta"><span>11 月 3 日</span><span>阅读 6 分钟</span></div>
+            </div>
+          </article>
+          <article class="card pick-card">
+            <img src="https://picsum.photos/seed/gtatake2call/480/300" width="480" height="300" loading="lazy" alt="财报电话会场景示意，用于发售窗口讨论配图" style="object-fit:cover">
+            <div class="pick-body">
+              <span class="pick-tag">财报解读</span>
+              <h3>Take-Two 电话会里三句能引用的原话</h3>
+              <p>11 月 5 日的会上，CEO 用了“持续评估窗口”“不改变既有计划”“适当时候公布”三句。对比去年同期措辞，仅第二句为新增。</p>
+              <div class="meta"><span>11 月 5 日</span><span>阅读 9 分钟</span></div>
+            </div>
+          </article>
+          <article class="card pick-card">
+            <img src="https://picsum.photos/seed/moddingtakedown/480/300" width="480" height="300" loading="lazy" alt="模组社区论坛邮件的模糊截图示意" style="object-fit:cover">
+            <div class="pick-body">
+              <span class="pick-tag">社区事件</span>
+              <h3>地图移植项目下架通知：邮件原文慢慢读</h3>
+              <p>11 月 3 日的通知邮件用了“未经授权分发”表述，没有提具体资产。站长公开的下载包共 4.7GB，其中 1.2GB 为自制模型。</p>
+              <div class="meta"><span>11 月 4 日</span><span>阅读 7 分钟</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="block" id="updates" aria-labelledby="updates-title">
+        <div class="block-head">
+          <h2 id="updates-title">最新动静：带日期和时间来源</h2>
+          <span class="hint">本周 8 条</span>
+        </div>
+        <ul class="update-list">
+          <li><span class="date">今天 09:12</span><span><strong>GTA Online 新一批双倍周上线</strong>，名钻豪赌系列任务经验翻倍，持续到 11 月 19 日 17:00。</span><span class="src">Rockstar Newswire</span></li>
+          <li><span class="date">昨天 20:40</span><span><strong>GTA6 官方截图集更新</strong>，新增 3 张海岸公路场景，累计 27 张。</span><span class="src">官方社交账号</span></li>
+          <li><span class="date">11 月 6 日</span><span><strong>模组社区站长回应下架</strong>，称将删除 1.2GB 自制模型以外的全部内容并重新提交。</span><span class="src">社区论坛帖</span></li>
+          <li><span class="date">11 月 5 日</span><span><strong>Take-Two 第三季度电话会</strong>，发售窗口表述未变，管理层未回答第三支预告的问题。</span><span class="src">财报录音</span></li>
+          <li><span class="date">11 月 5 日</span><span><strong>荒野大镖客2 在线模式月度奖励调整</strong>，收藏家职业经验系数从 1.5 降到 1.3。</span><span class="src">游戏内公告</span></li>
+          <li><span class="date">11 月 4 日</span><span><strong>招聘页新增两条岗位</strong>，一条渲染工程、一条网络同步，工作地点均在爱丁堡。</span><span class="src">官方招聘页</span></li>
+          <li><span class="date">11 月 3 日</span><span><strong>GTA5 地图移植项目收到下架通知</strong>，邮件引用“未经授权分发”条款。</span><span class="src">站长公开邮件</span></li>
+          <li><span class="date">11 月 2 日</span><span><strong>社区投票结果公布</strong>，1.8 万票里 63% 认为第三支预告不会在 11 月出现。</span><span class="src">Reddit 子版投票</span></li>
+        </ul>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="block" id="channels" aria-labelledby="channels-title">
+        <div class="block-head">
+          <h2 id="channels-title">频道索引：按你关心的那条线进</h2>
+          <span class="hint">12 个频道</span>
+        </div>
+        <div class="channel-index">
+          <a href="/#deepdive">GTA6 发售窗口 <span>18 条</span></a>
+          <a href="/#picks">GTA6 预告片解析 <span>14 条</span></a>
+          <a href="/#updates">GTA Online 冬季更新 <span>22 条</span></a>
+          <a href="/#picks">荒野大镖客2 次世代补丁 <span>9 条</span></a>
+          <a href="/#deepdive">Take-Two 财报解读 <span>7 条</span></a>
+          <a href="/#guide">罪恶都市地图考据 <span>11 条</span></a>
+          <a href="/#comments">鲨鱼卡与游戏币 <span>6 条</span></a>
+          <a href="/#guide">新手开荒路线 <span>13 条</span></a>
+          <a href="/#updates">模组下架与版权 <span>5 条</span></a>
+          <a href="/#picks">配音演员与角色 <span>8 条</span></a>
+          <a href="/#faq">平台与配置疑问 <span>10 条</span></a>
+          <a href="/#comments">玩家社区争议 <span>16 条</span></a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="block deep-dive" id="deepdive" aria-labelledby="deepdive-title">
+        <h2 id="deepdive-title">深度解析：把“GTA6 快出了”拆成可核对的四段</h2>
+        <p class="byline">整理 / 核对：站内编辑部 · 最后核对 2026 年 11 月 8 日 10:20</p>
+
+        <p>社区每隔两周就会出现一轮“要来了”的情绪，触发点往往只是一张新截图或一条招聘。判断这件事，可以先不看情绪，只看四个能查的来源：财报口径、官方素材节奏、招聘岗位、评级入库记录。</p>
+
+        <h3>一、财报口径：三句话的措辞差在哪</h3>
+        <p>2025 年 11 月的电话会上，管理层说的是“在既有窗口内推进”；2026 年 11 月 5 日这次改成了“持续评估窗口，不改变既有计划”。前一句只提进度，后一句多了一个动作主语，指向内部评估而非外部改动。第三句“适当时候公布”在 2024 年也用过一次，当时隔了 47 天才公布新截图。</p>
+        <table class="compare-table">
+          <caption style="text-align:left;color:var(--dim);font-size:.8rem;padding:6px 0">三年同一场电话会的窗口表述对照</caption>
+          <thead><tr><th>时间</th><th>原话关键词</th><th>后续 60 天内动作</th></tr></thead>
+          <tbody>
+            <tr><td>2024 年 11 月</td><td>“2025 财年窗口”</td><td>公布首支预告，间隔 41 天</td></tr>
+            <tr><td>2025 年 11 月</td><td>“在既有窗口内推进”</td><td>无新素材，仅发截图 4 张</td></tr>
+            <tr><td>2026 年 11 月</td><td>“持续评估，不改变计划”</td><td>截至今天第 3 天，无新动作</td></tr>
+          </tbody>
+        </table>
+        <div class="claim-box"><b>可反驳的判断：</b>“持续评估窗口”这句本身不构成延期证据。真正能说明问题的是 60 天内是否出现新素材；如果到 2027 年 1 月 5 日仍无第三支预告，才说明内部节奏确实后移。</div>
+
+        <h3>二、素材节奏：两支预告间隔 412 天</h3>
+        <ol class="timeline">
+          <li><b>2025 年 9 月 22 日 首支预告</b>时长 1 分 31 秒，发布 24 小时播放 9300 万次，创 Rockstar 频道纪录。</li>
+          <li><b>2026 年 5 月 8 日 首批截图 12 张</b>集中在城区与海岸，未出现实机 UI。</li>
+          <li><b>2026 年 11 月 3 日 第二支预告</b>时长 1 分 52 秒，比首支长 21 秒，新增 4 个可辨识地名。</li>
+          <li><b>2026 年 11 月 6 日 截图补至 27 张</b>新增 3 张海岸公路，光照时段与预告 1:42 处一致。</li>
+        </ol>
+        <p>两支预告间隔 412 天，比 GTA5 当年从首支到第二支的 214 天长了近一倍。间隔拉长不等于品控变差，更直接的原因是本作地图规模与光照系统重写，剪辑素材的筛选成本上升。</p>
+
+        <h3>三、招聘岗位：能读到什么，读不到什么</h3>
+        <p>11 月 4 日新增的两条岗位里，“高级渲染工程师”要求里写了“参与既往作品的平台适配”，这是荒野大镖客2 补丁传闻唯一能查证的来源。另一条“网络同步工程师”只提新项目，没有作品名。两者都放在爱丁堡，与 Rockstar North 的办公地址一致。</p>
+        <p>能读到的是：团队确实在做旧作适配方向的工程准备。读不到的是：适配哪一部、什么平台、什么时间。把“既往作品”直接等同于荒野大镖客2，属于跳过中间步骤的推测。</p>
+        <div class="claim-box"><b>事实 / 回应 / 推测分开列：</b>招聘页原文（事实）；Rockstar 未回应媒体询问（回应缺失）；社区认定是荒野大镖客2（推测）。三者不能混在一句话里当结论用。</div>
+
+        <h3>四、评级记录与零售商占位：最容易误读的两类</h3>
+        <p>韩国评级机构今年 8 月给一个“未命名 Rockstar 作品”出了 18 禁分级，条目里没有平台信息。零售商占位则更杂：巴西一家电商 10 月 29 日上架了带占位封面的商品页，两小时后下架。这两类记录在过去五年里出现过 6 次，其中 4 次与最终公布的作品对不上。</p>
+        <p>把评级记录当发售倒计时，是把内部流程当外部信号。更稳的用法是：当评级、招聘、财报三处同时指向同一平台时，再调高可信度。</p>
+      </section>
+
+      <!-- 体验指南 -->
+      <section class="block" id="guide" aria-labelledby="guide-title">
+        <div class="block-head">
+          <h2 id="guide-title">入坑指南：从哪一部开始、先玩线上还是线下</h2>
+          <span class="hint">给新玩家的五步</span>
+        </div>
+        <ol class="guide-steps">
+          <li>
+            <h3>先确认平台和配置</h3>
+            <p>GTA5 增强版在 PC 端要求 SSD 与 8GB 显存起步，机械硬盘加载首场景平均 3 分 40 秒。荒野大镖客2 对 CPU 单核更敏感，四核老平台建议先跑基准测试。</p>
+          </li>
+          <li>
+            <h3>线下模式先打 10 小时再决定线上</h3>
+            <p>GTA5 线下主线约 30 小时，前 10 小时能接触到三个主角的切换机制。跳过线下直接进线上，会错过地图认知和驾驶手感养成。</p>
+          </li>
+          <li>
+            <h3>线上开局别急着买资产</h3>
+            <p>新手包给的 100 万游戏币，买完办公室和一辆车就剩不到 20 万。更划算的顺序是：先做联系人任务攒到 150 万，再买夜总会或地堡。</p>
+          </li>
+          <li>
+            <h3>冬季更新前留出 200 万缓冲</h3>
+            <p>按 2025 年冬季更新后新车均价 218 万算，更新当周物价通常上浮 8% 到 12%。提前两周囤币比更新后刷双倍更省时间。</p>
+          </li>
+          <li>
+            <h3>荒野大镖客2 优先推第二章</h3>
+            <p>第二章解锁营地升级与快速旅行，平均 6 小时可达。第一章节奏慢，跳过支线会影响后续陌生人任务的触发条件。</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- FAQ -->
+      <section class="block" id="faq" aria-labelledby="faq-title">
+        <div class="block-head">
+          <h2 id="faq-title">常见疑问：五个被问得最多的问题</h2>
+          <span class="hint">答案按 11 月 8 日可查信息写</span>
+        </div>
+        <details class="faq-item">
+          <summary>GTA6 第三次预告片有没有官方日期？</summary>
+          <div class="faq-a">截至 2026 年 11 月 8 日，Rockstar 官方频道只发布了两支预告和一组截图，没有公布第三支的日期。社交平台上流传的 11 月 12 日说法来自自媒体截图，未见官方账号或 Take-Two 公告确认。</div>
+        </details>
+        <details class="faq-item">
+          <summary>荒野大镖客2 的次世代补丁真的在做吗？</summary>
+          <div class="faq-a">Rockstar 招聘页在 10 月挂出过“高级渲染工程师，参与既往作品的平台适配”岗位，但没有指名作品。社区把这条招聘与荒野大镖客2 联系起来属于推测，官方至今没有宣布补丁计划。</div>
+        </details>
+        <details class="faq-item">
+          <summary>GTA Online 冬季更新通常什么时候上线？</summary>
+          <div class="faq-a">近三年冬季更新分别落在 12 月 13 日、12 月 12 日和 12 月 10 日，都在周二。按这个节奏，2026 年冬季更新大概率还是 12 月第二个周二前后，具体内容需等 Rockstar Newswire 公布。</div>
+        </details>
+        <details class="faq-item">
+          <summary>为什么同一段 GTA6 实机画面会被反复解读？</summary>
+          <div class="faq-a">官方素材每次只放几十秒，帧数有限。玩家逐帧截图后容易把镜头切换处的模型变化当成新机制，再经短视频二次剪辑放大。对比同一素材的原始上传版本，多数“新发现”在首帧就已存在。</div>
+        </details>
+        <details class="faq-item">
+          <summary>R星游戏里的线上模式氪金值得吗？</summary>
+          <div class="faq-a">鲨鱼卡价格从 2023 年起未变，最便宜的 8 美元档对应约 12.5 万游戏币，而一辆主流跑车改满通常要 200 万游戏币以上。按每周做完三次双倍任务估算，纯靠游玩攒够一辆车约需 6 到 8 小时，是否氪金取决于时间成本而非数值优势。</div>
+        </details>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="block" id="comments" aria-labelledby="comments-title">
+        <div class="block-head">
+          <h2 id="comments-title">玩家锐评：六条来自社区的声音</h2>
+          <span class="hint">含吐槽与中性意见</span>
+        </div>
+        <div class="comment-list">
+          <div class="comment">
+            <div class="who"><span class="avatar">K</span><b>Kane_86</b><time>11 月 7 日</time></div>
+            <p>第二支预告 1:42 那个车牌，我拿 4K 版本又看了一遍，放大后有压缩噪点，根本认不出后两位。别把每一帧都当线索，剪辑软件里的素材重复概率比彩蛋高。</p>
+            <div class="star">提到：第二支预告 1:42 车牌</div>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">陈</span><b>陈小满</b><time>11 月 6 日</time></div>
+            <p>财报那句话我原样听了三遍，“持续评估窗口”后面跟的是“不改变既有计划”。两个分句放一起，更像是稳住投资人的表述，不是给玩家发信号。</p>
+            <div class="star">提到：11 月 5 日电话会原话</div>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">老</span><b>老周的营地</b><time>11 月 5 日</time></div>
+            <p>荒野大镖客2 补丁的事从 9 月传到 11 月，每次转发的截图都是同一张招聘页。真要信，至少等官方 Newswire 发一条带日期的公告。</p>
+            <div class="star">提到：招聘页截图反复转发</div>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">V</span><b>ViceCity_1986</b><time>11 月 4 日</time></div>
+            <p>冬季更新前囤币这条挺实用。去年我就是更新后第一周买的车，比朋友早两周买的多花了 21 万，同样配置。物价上浮这事游戏里从不提示。</p>
+            <div class="star">提到：冬季更新物价</div>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">阿</span><b>阿伦不熬夜</b><time>11 月 4 日</time></div>
+            <p>说句不讨喜的，新玩家真没必要为第三支预告熬着。现在能玩的内容足够撑三个月，等公告出来再买也不迟，反正预购奖励历来是几件衣服。</p>
+            <div class="star">提到：预购奖励与等待成本</div>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">林</span><b>林间小路_RDR</b><time>11 月 3 日</time></div>
+            <p>地图移植那个项目我看过演示视频，自制模型部分做得挺细，下架通知只提分发授权没提资产。两边说法对不上，还是等站长把邮件全文贴出来再说。</p>
+            <div class="star">提到：11 月 3 日下架通知</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="block" id="news" aria-labelledby="news-title">
+        <div class="block-head">
+          <h2 id="news-title">相关资讯：同一事件的不同信息层</h2>
+          <span class="hint">4 条</span>
+        </div>
+        <div class="news-list">
+          <article class="news-item">
+            <div>
+              <h3>Take-Two 第三季度财报：净预订额同比增 6%</h3>
+              <p>电话会里被问及发售窗口 3 次，管理层均以“不改变既有计划”回应，未给新日期。</p>
+            </div>
+            <time>11 月 5 日</time>
+          </article>
+          <article class="news-item">
+            <div>
+              <h3>Rockstar 爱丁堡办公室新增两条技术岗</h3>
+              <p>渲染工程与网络同步各一，前者描述含“既往作品平台适配”，后者只提新项目。</p>
+            </div>
+            <time>11 月 4 日</time>
+          </article>
+          <article class="news-item">
+            <div>
+              <h3>GTA Online 双倍周延长至 11 月 19 日</h3>
+              <p>名钻豪赌系列任务经验翻倍，同时段内车行折扣覆盖 14 款车型。</p>
+            </div>
+            <time>11 月 8 日</time>
+          </article>
+          <article class="news-item">
+            <div>
+              <h3>模组社区站长承诺周末前重新提交</h3>
+              <p>删除范围是 1.2GB 自制模型以外的部分，重新提交后能否过审没有时间表。</p>
+            </div>
+            <time>11 月 6 日</time>
+          </article>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="block" id="related" aria-labelledby="related-title">
+        <div class="block-head">
+          <h2 id="related-title">相关推荐：按条目找更细的</h2>
+        </div>
+        <div class="tag-cloud">
+          <a href="/#deepdive">GTA6 发售窗口判断清单</a>
+          <a href="/#picks">第二支预告逐帧解析</a>
+          <a href="/#updates">GTA Online 冬季更新日程</a>
+          <a href="/#faq">荒野大镖客2 次世代补丁</a>
+          <a href="/#deepdive">Take-Two 财报原话对照</a>
+          <a href="/#guide">罪恶都市地图地名考据</a>
+          <a href="/#comments">鲨鱼卡性价比讨论</a>
+          <a href="/#guide">GTA5 增强版配置要求</a>
+          <a href="/#news">模组下架事件时间线</a>
+          <a href="/#picks">配音演员与角色对应表</a>
+        </div>
+      </section>
+
+      <!-- 补充板块：可信度分层榜单 -->
+      <section class="block" id="rank" aria-labelledby="rank-title">
+        <div class="block-head">
+          <h2 id="rank-title">说法可信度分层：本周六条传闻的核对结果</h2>
+          <span class="hint">按可查证程度排序</span>
+        </div>
+        <div class="rank-panel">
+          <div class="rank-main">
+            <ol class="rank-list">
+              <li>招聘页“既往作品平台适配”<span class="v">可查证 · 官方页</span></li>
+              <li>电话会“不改变既有计划”<span class="v">可查证 · 录音</span></li>
+              <li>冬季更新 12 月第二周<span class="v">规律推测 · 三年数据</span></li>
+              <li>第三支预告 11 月 12 日<span class="v">无出处 · 自媒体截图</span></li>
+              <li>评级记录指向新作<span class="v">易误读 · 条目无平台</span></li>
+              <li>零售商占位封面泄露<span class="v">已撤 · 占位图</span></li>
+            </ol>
+          </div>
+          <div class="rank-side">
+            <p class="quote">“能查到原文的排前面，查不到原文的哪怕听起来更劲爆也往后放。”</p>
+            <p style="font-size:.8rem;color:var(--dim);margin-top:10px">核对方法：每条记下首次出现的时间、发布账号、是否附原始链接。三样缺一样，可信度降一档。</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 侧栏 -->
+    <aside class="layout-aside" aria-label="侧栏导航与速览">
+      <div class="aside-card">
+        <h3>本页导航</h3>
+        <ul class="aside-nav" id="asideNav">
+          <li><a href="/#overview">圈内概览</a></li>
+          <li><a href="/#picks">本周精选</a></li>
+          <li><a href="/#updates">最新动静</a></li>
+          <li><a href="/#channels">频道索引</a></li>
+          <li><a href="/#deepdive">深度解析</a></li>
+          <li><a href="/#guide">入坑指南</a></li>
+          <li><a href="/#faq">常见疑问</a></li>
+          <li><a href="/#comments">玩家锐评</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#rank">可信度分层</a></li>
+        </ul>
+      </div>
+      <div class="aside-card">
+        <h3>速览</h3>
+        <p class="aside-mini"><strong>两支预告间隔：</strong>412 天<br>
+        <strong>官方截图：</strong>27 张<br>
+        <strong>冬季更新近三年均值：</strong>12 月 12 日<br>
+        <strong>本周可查证记录：</strong>41 条</p>
+      </div>
+      <div class="aside-card">
+        <h3>核对小贴士</h3>
+        <p class="aside-mini">看到截图先找原始上传账号，再看发布时间是否早于二次转发。缺这两步，传闻不列进榜单。</p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/#top">
+          <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#f0a500"/>
+            <path d="M16 46 L32 14 L48 46 Z" fill="#101618"/>
+            <circle cx="32" cy="37" r="7" fill="#f0a500"/>
+            <path d="M26 37 h12" stroke="#101618" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-name">R星<span>吃瓜</span></span>
+        </a>
+        <p>把传闻拆成可查的记录，把公告读成能对上的时间码。游戏圈的热闹，值得慢一点看。</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h4>跟踪频道</h4>
+          <ul>
+            <li><a href="/#deepdive">GTA6 发售窗口</a></li>
+            <li><a href="/#picks">预告片逐帧解析</a></li>
+            <li><a href="/#updates">GTA Online 冬季更新</a></li>
+            <li><a href="/#faq">荒野大镖客2 补丁</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>实用内容</h4>
+          <ul>
+            <li><a href="/#guide">入坑五步</a></li>
+            <li><a href="/#faq">常见疑问</a></li>
+            <li><a href="/#rank">可信度分层</a></li>
+            <li><a href="/#related">相关推荐</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>互动</h4>
+          <ul>
+            <li><a href="/#comments">玩家锐评</a></li>
+            <li><a href="/#news">相关资讯</a></li>
+            <li><a href="/#channels">频道索引</a></li>
+            <li><a href="/#overview">圈内概览</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-note">
+      <p>站内条目含示例数据，日期与来源为整理用途，具体以 Rockstar Newswire 与 Take-Two 官方公告为准。</p>
+      <p>更新时间 2026 年 11 月 8 日 · 对应正文更新项：双倍周、截图集、下架回应</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuToggle = document.getElementById('menuToggle');
+  var mainNav = document.getElementById('mainNav');
+  if (menuToggle && mainNav){
+    menuToggle.addEventListener('click', function(){
+      var open = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mainNav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        mainNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+
+  var backTop = document.getElementById('backTop');
+  var asideLinks = Array.prototype.slice.call(document.querySelectorAll('#asideNav a'));
+  var sections = asideLinks.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  });
+
+  function onScroll(){
+    if (window.scrollY > 420){ backTop.classList.add('show'); }
+    else { backTop.classList.remove('show'); }
+
+    var pos = window.scrollY + 160;
+    var current = -1;
+    for (var i = 0; i < sections.length; i++){
+      if (sections[i] && sections[i].offsetTop <= pos) current = i;
+    }
+    asideLinks.forEach(function(a, i){
+      a.classList.toggle('active', i === current);
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  backTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  var searchInput = document.getElementById('siteSearch');
+  var searchResult = document.getElementById('searchResult');
+  var index = [
+    {t:'GTA6 发售窗口判断清单', h:'/#deepdive'},
+    {t:'第二支预告 1:42 车牌彩蛋', h:'/#picks'},
+    {t:'GTA Online 冬季更新日程', h:'/#updates'},
+    {t:'荒野大镖客2 次世代补丁五个出处', h:'/#picks'},
+    {t:'Take-Two 第三季度电话会原话', h:'/#deepdive'},
+    {t:'罪恶都市地图地名考据', h:'/#picks'},
+    {t:'鲨鱼卡与游戏币性价比', h:'/#faq'},
+    {t:'GTA5 增强版配置要求', h:'/#guide'},
+    {t:'模组下架事件时间线', h:'/#news'},
+    {t:'本周六条传闻可信度分层', h:'/#rank'},
+    {t:'玩家锐评与吐槽', h:'/#comments'},
+    {t:'入坑五步指南', h:'/#guide'}
+  ];
+
+  function renderSearch(){
+    var q = searchInput.value.trim().toLowerCase();
+    if (!q){ searchResult.classList.remove('show'); searchResult.innerHTML=''; return; }
+    var hits = index.filter(function(item){
+      return item.t.toLowerCase().indexOf(q) !== -1;
+    });
+    searchResult.innerHTML = '';
+    if (hits.length === 0){
+      var p = document.createElement('p');
+      p.className = 'empty';
+      p.textContent = '没有匹配“' + searchInput.value.trim() + '”的条目，换个关键词试试，比如 预告片、冬季更新、补丁。';
+      searchResult.appendChild(p);
+    } else {
+      hits.slice(0, 6).forEach(function(item){
+        var a = document.createElement('a');
+        a.href = item.h;
+        a.textContent = item.t;
+        searchResult.appendChild(a);
+      });
+    }
+    searchResult.classList.add('show');
+  }
+
+  searchInput.addEventListener('input', renderSearch);
+  searchInput.addEventListener('focus', function(){ if (searchInput.value.trim()) renderSearch(); });
+  document.addEventListener('click', function(e){
+    if (!searchResult.contains(e.target) && e.target !== searchInput){
+      searchResult.classList.remove('show');
+    }
+  });
+  searchResult.addEventListener('click', function(e){
+    if (e.target.tagName === 'A'){ searchResult.classList.remove('show'); }
+  });
+})();
+</script>
+
+</body>
+  </html>
